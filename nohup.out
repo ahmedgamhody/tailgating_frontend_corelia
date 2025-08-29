@@ -1,0 +1,402 @@
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1235
+
+
+  VITE v5.4.14  ready in 232 ms
+
+  ➜  Local:   http://localhost:1235/
+  ➜  Network: http://10.100.102.6:1235/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://192.168.0.1:1235/
+  ➜  Network: http://172.30.0.1:1235/
+  ➜  Network: http://172.28.0.1:1235/
+  ➜  Network: http://172.18.0.1:1235/
+  ➜  Network: http://172.22.0.1:1235/
+  ➜  Network: http://172.29.0.1:1235/
+  ➜  Network: http://172.19.0.1:1235/
+  ➜  Network: http://172.17.0.1:1235/
+  ➜  Network: http://192.168.144.1:1235/
+  ➜  Network: http://172.25.0.1:1235/
+  ➜  Network: http://172.31.0.1:1235/
+  ➜  Network: http://172.27.0.1:1235/
+Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1234
+
+
+  VITE v5.4.14  ready in 300 ms
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://172.31.0.1:1234/
+  ➜  Network: http://172.25.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://172.22.0.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+5:24:00 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+5:24:16 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+5:24:40 PM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+5:24:46 PM [vite] page reload src/types/index.ts
+5:27:57 PM [vite] hmr update /src/pages/homePage/Frame.tsx, /src/index.css
+5:27:57 PM [vite] Internal server error: /work/running/intelligent-video-surveillance/frontend/src/pages/homePage/Frame.tsx: Unexpected token, expected "," (44:20)
+
+  42 |           className="w-full h-full object-cover rounded"
+  43 |         />
+> 44 |         {{dimensions.width > 0 &&
+     |                     ^
+  45 |           plotsConditions?.boxes &&
+  46 |           frame?.boxes?.map((box, i) => {
+  47 |             const [x1, y1, x2, y2, confidence, label] = box;
+  Plugin: vite:react-babel
+  File: /work/running/intelligent-video-surveillance/frontend/src/pages/homePage/Frame.tsx:44:20
+  43 |          />
+  44 |          {{dimensions.width > 0 &&
+  45 |            plotsConditions?.boxes &&
+     |                               ^
+  46 |            frame?.boxes?.map((box, i) => {
+  47 |              const [x1, y1, x2, y2, confidence, label] = box;
+      at constructor (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:360:19)
+      at TypeScriptParserMixin.raise (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3327:19)
+      at TypeScriptParserMixin.unexpected (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3347:16)
+      at TypeScriptParserMixin.expect (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3657:12)
+      at TypeScriptParserMixin.parseObjectLike (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11507:14)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11025:23)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6936:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10759:23)
+      at TypeScriptParserMixin.parseUpdate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10744:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10724:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9676:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10577:61)
+      at TypeScriptParserMixin.parseExprOps (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10582:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10559:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10522:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9625:20)
+      at TypeScriptParserMixin.parseExpressionBase (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10477:23)
+      at /work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10473:39
+      at TypeScriptParserMixin.allowInAnd (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:12101:12)
+      at TypeScriptParserMixin.parseExpression (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10473:17)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6804:31)
+      at TypeScriptParserMixin.jsxParseElementAt (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6883:36)
+      at TypeScriptParserMixin.jsxParseElementAt (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6870:32)
+      at TypeScriptParserMixin.jsxParseElement (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6921:17)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6931:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10759:23)
+      at TypeScriptParserMixin.parseUpdate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10744:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10724:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9676:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10577:61)
+      at TypeScriptParserMixin.parseExprOps (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10582:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10559:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10522:21)
+      at /work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9614:39
+      at TypeScriptParserMixin.tryParse (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3665:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9614:18)
+      at /work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10493:39
+      at TypeScriptParserMixin.allowInAnd (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:12101:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11360:28)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11007:23)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6936:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10759:23)
+      at TypeScriptParserMixin.parseUpdate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10744:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10724:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9676:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10577:61)
+      at TypeScriptParserMixin.parseExprOps (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10582:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10559:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10522:21)
+5:27:58 PM [vite] Internal server error: /work/running/intelligent-video-surveillance/frontend/src/pages/homePage/Frame.tsx: Unexpected token, expected "," (44:20)
+
+  42 |           className="w-full h-full object-cover rounded"
+  43 |         />
+> 44 |         {{dimensions.width > 0 &&
+     |                     ^
+  45 |           plotsConditions?.boxes &&
+  46 |           frame?.boxes?.map((box, i) => {
+  47 |             const [x1, y1, x2, y2, confidence, label] = box;
+  Plugin: vite:react-babel
+  File: /work/running/intelligent-video-surveillance/frontend/src/pages/homePage/Frame.tsx:44:20
+  43 |          />
+  44 |          {{dimensions.width > 0 &&
+  45 |            plotsConditions?.boxes &&
+     |                               ^
+  46 |            frame?.boxes?.map((box, i) => {
+  47 |              const [x1, y1, x2, y2, confidence, label] = box;
+      at constructor (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:360:19)
+      at TypeScriptParserMixin.raise (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3327:19)
+      at TypeScriptParserMixin.unexpected (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3347:16)
+      at TypeScriptParserMixin.expect (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3657:12)
+      at TypeScriptParserMixin.parseObjectLike (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11507:14)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11025:23)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6936:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10759:23)
+      at TypeScriptParserMixin.parseUpdate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10744:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10724:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9676:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10577:61)
+      at TypeScriptParserMixin.parseExprOps (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10582:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10559:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10522:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9625:20)
+      at TypeScriptParserMixin.parseExpressionBase (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10477:23)
+      at /work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10473:39
+      at TypeScriptParserMixin.allowInAnd (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:12101:12)
+      at TypeScriptParserMixin.parseExpression (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10473:17)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6804:31)
+      at TypeScriptParserMixin.jsxParseElementAt (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6883:36)
+      at TypeScriptParserMixin.jsxParseElementAt (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6870:32)
+      at TypeScriptParserMixin.jsxParseElement (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6921:17)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6931:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10759:23)
+      at TypeScriptParserMixin.parseUpdate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10744:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10724:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9676:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10577:61)
+      at TypeScriptParserMixin.parseExprOps (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10582:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10559:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10522:21)
+      at /work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9614:39
+      at TypeScriptParserMixin.tryParse (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:3665:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9614:18)
+      at /work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10493:39
+      at TypeScriptParserMixin.allowInAnd (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:12101:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11360:28)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:11007:23)
+      at TypeScriptParserMixin.parseExprAtom (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:6936:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10759:23)
+      at TypeScriptParserMixin.parseUpdate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10744:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10724:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:9676:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10577:61)
+      at TypeScriptParserMixin.parseExprOps (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10582:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10559:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/work/running/intelligent-video-surveillance/frontend/node_modules/@babel/parser/lib/index.js:10522:21)
+5:28:30 PM [vite] hmr update /src/pages/homePage/Frame.tsx, /src/index.css
+5:29:59 PM [vite] hmr update /src/components/SideBar/PlotsSideBar.tsx, /src/index.css
+5:30:59 PM [vite] hmr update /src/pages/homePage/Frame.tsx, /src/index.css
+5:30:59 PM [vite] hmr update /src/pages/homePage/Frame.tsx, /src/index.css
+Killed
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1234
+
+
+  VITE v5.4.14  ready in 233 ms
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://172.31.0.1:1234/
+  ➜  Network: http://172.25.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://172.22.0.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+5:37:35 PM [vite] page reload src/types/index.ts
+5:37:47 PM [vite] page reload src/types/index.ts
+5:38:15 PM [vite] page reload src/types/index.ts
+5:10:55 AM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+5:12:38 AM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+5:15:58 AM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+5:19:27 AM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+5:23:36 AM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+Killed
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1234
+
+
+  VITE v5.4.14  ready in 384 ms
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://172.24.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+3:08:23 PM [vite] hmr update /src/pages/loginPage/LoginPage.tsx, /src/index.css
+3:08:23 PM [vite] Internal server error: Failed to resolve import "../../assets/login.png" from "src/pages/loginPage/LoginPage.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /work/running/intelligent-video-surveillance/frontend/src/pages/loginPage/LoginPage.tsx:6:22
+  21 |  import { zodResolver } from "@hookform/resolvers/zod";
+  22 |  import { EyeIcon, EyeOffIcon } from "lucide-react";
+  23 |  import loginLogo from "../../assets/login.png";
+     |                         ^
+  24 |  import { useNavigate } from "react-router-dom";
+  25 |  const schema = z.object({
+      at TransformPluginContext._formatError (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///work/running/intelligent-video-surveillance/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
+3:08:43 PM [vite] hmr update /src/App.tsx, /src/index.css
+3:09:21 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+3:09:22 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+3:11:53 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+3:11:54 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+3:12:11 PM [vite] .env changed, restarting server...
+3:12:12 PM [vite] server restarted.
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://172.31.0.1:1234/
+  ➜  Network: http://172.24.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://192.168.128.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+  ➜  Network: http://172.22.0.1:1234/
+3:14:18 PM [vite] .env changed, restarting server...
+3:14:18 PM [vite] server restarted.
+4:19:31 PM [vite] hmr update /src/components/Modal/AddChannelModal.tsx, /src/index.css
+Killed
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1234
+
+
+  VITE v5.4.14  ready in 243 ms
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://172.31.0.1:1234/
+  ➜  Network: http://172.24.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://192.168.128.1:1234/
+  ➜  Network: http://172.22.0.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+5:10:42 PM [vite] hmr update /src/components/headers/NavBar.tsx, /src/index.css
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1234
+
+
+  VITE v5.4.14  ready in 320 ms
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://172.25.0.1:1234/
+  ➜  Network: http://172.22.0.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+  ➜  Network: http://192.168.128.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://172.31.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Killed
+
+> test@0.0.0 dev
+> vite --host 0.0.0.0 --port 1234
+
+
+  VITE v5.4.14  ready in 342 ms
+
+  ➜  Local:   http://localhost:1234/
+  ➜  Network: http://10.100.102.6:1234/
+  ➜  Network: http://192.168.144.1:1234/
+  ➜  Network: http://192.168.80.1:1234/
+  ➜  Network: http://172.22.0.1:1234/
+  ➜  Network: http://172.24.0.1:1234/
+  ➜  Network: http://172.23.0.1:1234/
+  ➜  Network: http://192.168.160.1:1234/
+  ➜  Network: http://192.168.128.1:1234/
+  ➜  Network: http://172.28.0.1:1234/
+  ➜  Network: http://172.31.0.1:1234/
+  ➜  Network: http://172.29.0.1:1234/
+  ➜  Network: http://192.168.0.1:1234/
+  ➜  Network: http://192.168.64.1:1234/
+  ➜  Network: http://172.26.0.1:1234/
+  ➜  Network: http://172.21.0.1:1234/
+  ➜  Network: http://192.168.16.1:1234/
+  ➜  Network: http://172.19.0.1:1234/
+  ➜  Network: http://192.168.48.1:1234/
+  ➜  Network: http://172.25.0.1:1234/
+  ➜  Network: http://172.20.0.1:1234/
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme

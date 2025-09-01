@@ -1,4 +1,10 @@
-import { CircleChevronRight, Settings } from "lucide-react";
+import {
+  CircleChevronRight,
+  Grid2x2,
+  Grid3x3,
+  Settings,
+  Table2,
+} from "lucide-react";
 import { ToggleSwitch, Tooltip } from "flowbite-react";
 import { Sidebar } from "flowbite-react";
 import { useAppDispatch } from "../../store/hooks";
@@ -6,6 +12,7 @@ import { useAppDispatch } from "../../store/hooks";
 import { closePlotsSidebar } from "../../store/ui/uiSlice";
 import { PlotsConditionsProps, PlotsConditionsType } from "../../types";
 import PlotToggle from "../../pages/Live streaming/Plots/PlotToggle";
+import { useLocation } from "react-router-dom";
 const toggleItems: {
   label: string;
   name: keyof PlotsConditionsType;
@@ -44,8 +51,12 @@ export default function PlotsSideBar({
   setPlotsConditions,
   moreInstancesInput,
   setMoreInstancesInput,
+  setItemsPerRow,
+  isFirstItemExpanded,
+  setIsFirstItemExpanded,
 }: PlotsConditionsProps) {
   const dispatch = useAppDispatch();
+  const location = useLocation();
   return (
     <Sidebar
       aria-label="Sidebar with content separator example"
@@ -140,6 +151,33 @@ export default function PlotsSideBar({
                 )
               )}
             </div>
+            {/* // i need to show this button in all pages exit /anomalies */}
+            {location.pathname !== "/anomalies" && (
+              <div className="flex items-center gap-3 justify-center">
+                <Grid2x2
+                  className="cursor-pointer"
+                  onClick={() => {
+                    if (setItemsPerRow) setItemsPerRow(2);
+                    if (setIsFirstItemExpanded) setIsFirstItemExpanded(false);
+                  }}
+                />
+                <Grid3x3
+                  className="cursor-pointer"
+                  onClick={() => {
+                    if (setItemsPerRow) setItemsPerRow(3);
+                    if (setIsFirstItemExpanded) setIsFirstItemExpanded(false);
+                  }}
+                />
+                <Table2
+                  className="rotate-180 cursor-pointer"
+                  onClick={() => {
+                    if (setIsFirstItemExpanded)
+                      setIsFirstItemExpanded(!isFirstItemExpanded);
+                    if (setItemsPerRow) setItemsPerRow(3);
+                  }}
+                />
+              </div>
+            )}
           </div>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

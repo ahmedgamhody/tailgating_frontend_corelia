@@ -2,13 +2,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import auth from "./auth/authSlice";
 import channels from "./channel/channelSlice";
 import ui from "./ui/uiSlice";
-import license_plates from "./license plates/licensePlatesSlice";
+import anomaliesSlice from "./license plates/anomaliesSlice";
+import anomalies from "./anomalies/anomaliesSlice";
 export const store = configureStore({
   reducer: {
     auth,
     channels,
     ui,
-    license_plates,
+    anomaliesSlice,
+    anomalies,
   },
 });
 

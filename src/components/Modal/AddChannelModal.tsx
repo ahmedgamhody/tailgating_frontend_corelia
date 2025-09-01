@@ -105,10 +105,15 @@ export default function AddChannelModal({ openModal, setOpenModal }: any) {
     sources
       .filter((s) => s.type === "file")
       .forEach((s) => {
-        if (s.file) {
-          FinalFormData.append("files_sources", s.file);
+        if (s.source) {
+          FinalFormData.append("files_sources", s.source);
         }
       });
+
+    console.log(
+      "files_sources",
+      sources.filter((s) => s.type === "file")
+    );
 
     try {
       setLoading(true);

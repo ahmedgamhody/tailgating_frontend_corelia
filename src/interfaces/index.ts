@@ -8,20 +8,12 @@ interface IFrameData {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   keypoints: any[];
   frame_rate: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  license_plates: any[];
+  anomalies: string;
 }
 interface IWSResponse {
   timestamp: string;
   data: IFrameData[];
 }
-// interface IWSResponse {
-//   timestamp: string;
-//   data: {
-//     channel_name: string;
-//     data: IFrameData[];
-//   };
-// }
 
 interface TSources {
   source_name: string;

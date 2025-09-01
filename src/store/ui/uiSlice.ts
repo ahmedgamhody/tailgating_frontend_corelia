@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 type InitialStateType = {
   isChannelsSidebarOpen: boolean;
   isPlotsSidebarOpen: boolean;
-  // Add other UI-related state properties here as needed
+  isAnomaliesSidebarOpen: boolean;
 };
 
 const initialState: InitialStateType = {
   isChannelsSidebarOpen: true,
   isPlotsSidebarOpen: false,
-  // Initialize other UI-related state properties here
+  isAnomaliesSidebarOpen: true,
 };
 
 const uiSlice = createSlice({
@@ -28,6 +28,12 @@ const uiSlice = createSlice({
     closePlotsSidebar: (state) => {
       state.isPlotsSidebarOpen = false;
     },
+    openAnomaliesSidebar: (state) => {
+      state.isAnomaliesSidebarOpen = true;
+    },
+    closeAnomaliesSidebar: (state) => {
+      state.isAnomaliesSidebarOpen = false;
+    },
   },
 });
 
@@ -36,5 +42,7 @@ export const {
   closeChannelsSidebar,
   openPlotsSidebar,
   closePlotsSidebar,
+  openAnomaliesSidebar,
+  closeAnomaliesSidebar,
 } = uiSlice.actions;
 export default uiSlice.reducer;

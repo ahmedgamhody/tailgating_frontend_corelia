@@ -1,36 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { useEffect, useRef, useState } from "react";
 import SourceSkeleton from "../../ui/skeletons/SourceSkeleton";
-import { Grid2x2, Grid3x3, Table2 } from "lucide-react";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { IFrameData, IWSResponse } from "../../interfaces";
 import FrameItem from "./Frame";
 import { PlotsConditionsType } from "../../types";
 import { buildPayload } from "../../utils/buildPayload";
-// import { addLicensePlates } from "../../store/license plates/licensePlatesSlice";
+import { getGridColsClass } from "../../utils/getGridColsClass";
+import { addAnomalies } from "../../store/license plates/anomaliesSlice";
 
 export default function HomePage({
   plotsConditions,
   moreInstancesInput,
+  isFirstItemExpanded,
+
+  itemsPerRow,
 }: {
   plotsConditions?: PlotsConditionsType;
   moreInstancesInput?: number | "";
+  isFirstItemExpanded: boolean;
+  itemsPerRow: number;
 }) {
-  const [itemsPerRow, setItemsPerRow] = useState(3);
   const [frames, setFrames] = useState<IFrameData[]>([]);
-  const [isFirstItemExpanded, setIsFirstItemExpanded] = useState(false);
   const { selectedChannel } = useAppSelector((state) => state.channels);
-  // const dispatch = useAppDispatch();
-  const getGridColsClass = () => {
-    switch (itemsPerRow) {
-      case 2:
-        return "grid-cols-2";
-      case 3:
-      default:
-        return "grid-cols-3";
-    }
-  };
+  const dispatch = useAppDispatch();
   const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
@@ -48,6 +41,10 @@ export default function HomePage({
         const res: IWSResponse[] = JSON.parse(event.data);
         console.log("socket response", res);
         const allFrameData = res.flatMap((entry) => entry.data);
+        const anomalies = res.flatMap((entry) =>
+          entry.data.map((frame) => frame.anomalies)
+        );
+        dispatch(addAnomalies(anomalies));
         setFrames(allFrameData);
       };
 
@@ -62,16 +59,23 @@ export default function HomePage({
     };
   }, [selectedChannel]);
 
+  useEffect(() => {
+    if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+      const payload = buildPayload(plotsConditions!, moreInstancesInput!);
+      socketRef.current.send(JSON.stringify({ ...payload }));
+    }
+  }, [plotsConditions, moreInstancesInput]);
+
   return (
     <div className="flex flex-col h-full overflow-hidden">
       {/* Scrollable Main Content */}
       <main className="flex-1 overflow-y-auto p-5">
         <div
-          className={`grid gap-4 ${getGridColsClass()}`}
+          className={`grid gap-4 ${getGridColsClass(itemsPerRow)}`}
           style={{ gridAutoRows: "minmax(120px, auto)" }}
         >
           {frames.length === 0
-            ? Array.from({ length: 8 }).map((_, index) => (
+            ? Array.from({ length: 6 }).map((_, index) => (
                 <div
                   key={index}
                   className={
@@ -101,35 +105,6 @@ export default function HomePage({
               ))}
         </div>
       </main>
-
-      {/* Sticky Footer at Bottom */}
-      <footer className="bg-gray-300 text-black p-3 flex flex-col gap-5">
-        <div className="flex justify-center">
-          <div className="flex items-center  gap-2">
-            <Grid2x2
-              className="cursor-pointer"
-              onClick={() => {
-                setItemsPerRow(2);
-                setIsFirstItemExpanded(false);
-              }}
-            />
-            <Grid3x3
-              className="cursor-pointer"
-              onClick={() => {
-                setItemsPerRow(3);
-                setIsFirstItemExpanded(false);
-              }}
-            />
-            <Table2
-              className="rotate-180 cursor-pointer"
-              onClick={() => {
-                setIsFirstItemExpanded(!isFirstItemExpanded);
-                setItemsPerRow(3);
-              }}
-            />
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

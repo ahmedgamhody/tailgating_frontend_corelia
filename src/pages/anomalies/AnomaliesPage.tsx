@@ -13,6 +13,7 @@ import FrameItem from "../homePage/Frame";
 import { getAnomalyBatch } from "../../utils/api";
 import { useAppSelector } from "../../store/hooks";
 import AnomaliesMotMessage from "../../components/Tailgating Anomalies/AnomaliesMotMessage";
+import { useParams } from "react-router-dom";
 
 export default function AnomaliesPage({
   plotsConditions,
@@ -32,7 +33,7 @@ export default function AnomaliesPage({
     ocr_result: "",
     mot_result: [],
   });
-  const { timestamp } = useAppSelector((state) => state.anomalies);
+  const { timestamp } = useParams();
   const [loading, setLoading] = useState(false);
   const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -114,6 +115,8 @@ export default function AnomaliesPage({
   const handleSpeedChange = (speed: number) => {
     setPlaybackSpeed(speed);
   };
+
+  console.log({ moreInstancesInput, plotsConditions });
 
   return (
     <div className="flex flex-col h-full bg-white">

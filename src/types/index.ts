@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 export type TLoading = "idle" | "pending" | "succeeded" | "failed";
 export type FieldType = {
   name?: string;
@@ -79,4 +80,26 @@ export type AnomaliesResponse = AnomaliesResponseConfig[];
 export type anomaliesMessage = {
   ocr_result: string;
   mot_result: any[];
+};
+export type Vehicle = {
+  registration: string;
+  first_used_date: string | null;
+  registration_date: string | null;
+  manufacture_date: string | null;
+  primary_colour: string | null;
+  secondary_colour: string | null;
+  engine_size: number | null;
+  model: string | null;
+  make: string | null;
+  fuel_type: string | null;
+  last_mot_test_date: string | null;
+  last_update_timestamp: string | null;
+  last_update_date: string | null;
+  data_source: string | null;
+  modification: string | null;
+};
+
+export type Vehicles = Vehicle[];
+export type extractLicensePlateOcrResponse = {
+  plate: string;
 };

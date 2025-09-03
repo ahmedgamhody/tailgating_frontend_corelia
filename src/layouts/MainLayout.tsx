@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { ChevronRight } from "lucide-react";
 import { Tooltip } from "flowbite-react";
 import {
-  openAnomaliesSidebar,
+  // openAnomaliesSidebar,
   openChannelsSidebar,
   openPlotsSidebar,
 } from "../store/ui/uiSlice";
@@ -12,7 +12,7 @@ import PlotsSideBar from "../components/SideBar/PlotsSideBar";
 import { PlotsConditionsProps } from "../types";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import AnomaliesSideBar from "../components/SideBar/AnomaliesSideBar";
+// import AnomaliesSideBar from "../components/SideBar/AnomaliesSideBar";
 
 export default function MainLayout({
   plotsConditions,
@@ -27,11 +27,17 @@ export default function MainLayout({
   selectedSource,
   setSelectedSource,
 }: PlotsConditionsProps) {
-  const { isChannelsSidebarOpen, isPlotsSidebarOpen, isAnomaliesSidebarOpen } =
-    useAppSelector((state) => state.ui);
+  const { isChannelsSidebarOpen, isPlotsSidebarOpen } = useAppSelector(
+    (state) => state.ui
+  );
   const location = useLocation();
   const dispatch = useAppDispatch();
-
+  console.log({
+    selectedChannel,
+    setSelectedChannel,
+    selectedSource,
+    setSelectedSource,
+  });
   return (
     <div className="bg-section h-screen flex flex-col">
       <NavBar />
@@ -59,7 +65,7 @@ export default function MainLayout({
           </>
         )}
 
-        {location.pathname === "/anomalies" && (
+        {/* {location.pathname === "/anomalies" && (
           <>
             {isAnomaliesSidebarOpen ? (
               <AnomaliesSideBar
@@ -84,7 +90,7 @@ export default function MainLayout({
               </div>
             )}
           </>
-        )}
+        )} */}
 
         {/* Main Content */}
         <div className="flex-1 bg-section flex flex-col min-h-0">

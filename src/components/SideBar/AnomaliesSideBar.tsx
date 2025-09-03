@@ -4,10 +4,9 @@ import { Sidebar } from "flowbite-react";
 import { useAppDispatch } from "../../store/hooks";
 import { closeAnomaliesSidebar } from "../../store/ui/uiSlice";
 import { useGetChannelsAndSources } from "../../hooks/useGetChannelsAndSources";
-import { useGetAnomalies } from "../../hooks/useGetAnomalies";
 import {
   resetTimestamp,
-  setTimestamp,
+  // setTimestamp,
 } from "../../store/anomalies/anomaliesSlice";
 import { useEffect } from "react";
 export default function AnomaliesSideBar({
@@ -24,7 +23,6 @@ export default function AnomaliesSideBar({
   const dispatch = useAppDispatch();
 
   const { channels } = useGetChannelsAndSources();
-  const { anomalies } = useGetAnomalies();
 
   useEffect(() => {
     return () => {
@@ -109,7 +107,7 @@ export default function AnomaliesSideBar({
               </Select>
             </div>
           </div>
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <Label
               value="Anomalies Timestamps"
               className="text-lg text-secondary font-bold mb-3"
@@ -141,7 +139,7 @@ export default function AnomaliesSideBar({
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>

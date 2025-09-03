@@ -6,6 +6,9 @@ import HistoryPage from "./pages/history/HistoryPage";
 import AnomaliesPage from "./pages/anomalies/AnomaliesPage";
 import { useState } from "react";
 import { PlotsConditionsType } from "./types";
+import LicensePlateOcrLayout from "./layouts/LicensePlateOcrLayout";
+import LicensePlateOcrPage from "./pages/License Plate Ocr/LicensePlateOcrPage";
+import HistoryLayout from "./layouts/HistoryLayout";
 
 function App() {
   const [plotsConditions, setPlotsConditions] = useState<PlotsConditionsType>({
@@ -68,7 +71,7 @@ function App() {
               />
             }
           />
-          <Route
+          {/* <Route
             path="/history"
             element={
               <HistoryPage
@@ -78,9 +81,9 @@ function App() {
                 itemsPerRow={itemsPerRow}
               />
             }
-          />
+          /> */}
           <Route
-            path="/anomalies"
+            path="/anomalies/:timestamp"
             element={
               <AnomaliesPage
                 plotsConditions={plotsConditions}
@@ -90,6 +93,12 @@ function App() {
               />
             }
           />
+        </Route>
+        <Route path="/license-plate-ocr" element={<LicensePlateOcrLayout />}>
+          <Route index element={<LicensePlateOcrPage />} />
+        </Route>
+        <Route path="/history" element={<HistoryLayout />}>
+          <Route index element={<HistoryPage />} />
         </Route>
       </Routes>
     </div>

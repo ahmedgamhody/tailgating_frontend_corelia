@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import toast from "react-hot-toast";
 import axiosInstance from "./axiosInstance";
+import {
+  VehicleDetailsFormData,
+  VehiclesDetailsFormData,
+} from "../validation/VehicleDetailsValidation";
+import { extractLicensePlateOcrResponse, Vehicle, Vehicles } from "../types";
+import axios from "axios";
 
 axiosInstance.interceptors.response.use(
   (response) => response,
@@ -111,5 +117,61 @@ export const getAnomalyBatch = async ({
   );
   console.log("Fetched anomalies:", response.data);
 
+  return response.data;
+};
+
+export const extractLicensePlateOcr = async (file: File) => {
+  const api = import.meta.env.VITE_OCR_API;
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const response = await axios.post<extractLicensePlateOcrResponse>(
+    api,
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+  toast.success("License plate OCR extracted successfully");
+  return response.data;
+};
+export const getVehicleDetails = async ({
+  registration,
+  make,
+  primary_colour,
+}: VehicleDetailsFormData) => {
+  const api = import.meta.env.VITE_OCR_API_GET_VEHICLE_DETAILS;
+  const response = await axios.get<Vehicle>(`${api}/by-details`, {
+    params: {
+      registration,
+      make,
+      primary_colour,
+    },
+  });
+
+  return response.data;
+};
+
+export const getVehiclesDetails = async ({
+  partial_registration,
+  make,
+  primary_colour,
+  model,
+  fuel_type,
+  limit,
+}: VehiclesDetailsFormData) => {
+  const api = import.meta.env.VITE_OCR_API_GET_VEHICLE_DETAILS;
+  const response = await axios.get<Vehicles>(`${api}/by-partial-registration`, {
+    params: {
+      partial_registration,
+      ...(make ? { make } : {}),
+      ...(primary_colour ? { primary_colour } : {}),
+      ...(model ? { model } : {}),
+      ...(fuel_type ? { fuel_type } : {}),
+      limit: limit || 10,
+    },
+  });
   return response.data;
 };

@@ -6,15 +6,18 @@ const api = import.meta.env.VITE_API_GET_ANOMALIES;
 export const useGetAnomalies = () => {
   const [anomalies, setAnomalies] = useState<AnomaliesResponse>([]);
   const [error, setError] = useState<string | null>(null);
+  const [anomaliesLoading, setAnomaliesLoading] = useState(true);
   const fetchAnomalies = async () => {
     try {
+      setAnomaliesLoading(true);
       setError(null);
       const response = await axios.post<AnomaliesResponse>(api);
       setAnomalies(response.data);
     } catch (err) {
       console.error("Error fetching anomalies:", err);
       setError("Failed to fetch anomalies");
-      // Fallback to empty array or you can import the static array as fallback
+    } finally {
+      setAnomaliesLoading(false);
     }
   };
 
@@ -26,5 +29,6 @@ export const useGetAnomalies = () => {
     anomalies,
     error,
     refetch: fetchAnomalies,
+    anomaliesLoading,
   };
 };
